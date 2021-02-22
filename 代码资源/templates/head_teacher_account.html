@@ -1,0 +1,18 @@
+{% extends 'head_teacher.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+    <br>
+    <p>姓名：{{ name }}</p>
+    <p>性别：{{ gender }}</p>
+    <p>身份：{{ str }}</p>
+    <p>学院：计算机科学与网络工程学院</p>
+    <br>
+    <div>
+        <h5>修改密码：</h5>
+        <br>
+        {{ render_form(form, form_type="inline") }}
+        <br>
+    </div>
+
+{% endblock %}

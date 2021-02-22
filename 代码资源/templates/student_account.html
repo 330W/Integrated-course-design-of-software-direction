@@ -1,0 +1,25 @@
+{% extends 'student.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+<h5>学生本人信息：</h5>
+    <br>
+    <p>姓名：{{ name }}</p>
+    <p>性别：{{ gender }}</p>
+    <p>班级：{{ classes }}</p>
+    <p>班主任：{{ tea_name }}</p>
+    <p>入学日期：
+        <time>{{ birthday }}</time>
+    </p>
+    <p>学院：计算机科学与网络工程学院</p>
+    <p>专业：{{ major }}</p>
+    
+    <br>
+    <div>
+        <h5>修改密码：</h5>
+        <br>
+        {{ render_form(form, form_type="inline") }}
+        <br>
+    </div>
+
+{% endblock %}

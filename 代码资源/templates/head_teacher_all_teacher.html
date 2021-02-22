@@ -1,0 +1,8 @@
+{% extends 'head_teacher.html' %}
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block content %}
+<h2>任课老师名单</h2>
+<br>
+{{ render_table(messages_teacher, titles=title1, primary_key='tno') }}
+{% endblock %}

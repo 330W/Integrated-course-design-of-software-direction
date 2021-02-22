@@ -1,0 +1,426 @@
+{% extends 'head_teacher.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>课程表</title>
+		<link rel="stylesheet" type="text/css" href="../../static/css/style.css"/>
+	</head>
+	<body>
+
+		<table border="0" cellpadding="0" cellspacing="0" width="1800">
+		  <tr>
+			<td>
+			  <table border="0" cellpadding="0" cellspacing="0" width="1800">
+				<tr>
+				  <td><h6>2020-2021学年第1学期</h6></td>
+				  <td>
+					<p <div align="right"><h6>第18周</h6>
+						<h6>距离期末考试还有 {{ kaoshi }}天</h6></div></td>
+				</tr>
+			  </table>
+			</td>
+		  </tr>
+		</table>
+		
+	</body>
+	<!-- <body >		
+		<div >
+			<h2 class="title">计算机科学与技术-年级课程表</h2>
+			<table class="main_table"  border="1">
+				<tr>
+					<th></th>
+					<th width="200">星期一</th>
+					<th width="200">星期二</th>
+					<th width="200">星期三</th>
+					<th width="200">星期四</th>
+					<th width="200">星期五</th>
+					<th width="200">星期六</th>
+					<th width="200">星期日</th>
+
+				</tr>
+				<tr>
+					<td>第一节 <br> 08:30-09:15</td>
+					<td rowspan="2">{% for message in nianji_messages[0] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[4] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[8] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[12] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[16] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[20] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[24] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第二节 <br> 09:20-10:05</td> 
+				</tr>
+				<tr>
+					<td>第三节 <br> 10:25-11:10</td>
+					<td rowspan="2">
+						{% for message in nianji_messages[1] %}
+							{% for mess in message %}
+								{{ mess }} <br>
+							{% endfor %}
+						{% endfor %}
+					</td>
+					<td rowspan="2">{% for message in nianji_messages[5] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[9] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[13] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[17] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[21] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[25] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第四节 <br> 11:15-12:00</td>
+				</tr>
+				<tr>
+					<td>第五节 <br> 15:00-15:45</td>
+					<td rowspan="2">{% for message in nianji_messages[2] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[6] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[10] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[14] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[18] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[22] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in nianji_messages[26] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第六节 <br> 15:50-16:35</td>
+				</tr>
+				<tr>
+					<td>第七节 <br> 18:00-18:45</td>
+					<td rowspan="3">{% for message in nianji_messages[3] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in nianji_messages[7] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in nianji_messages[11] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in nianji_messages[15] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in nianji_messages[19] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in nianji_messages[23] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in nianji_messages[27] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第八节 <br> 18:50-19:35</td>
+				</tr>
+				<tr>
+					<td>第九节 <br> 19:40-20:25</td>
+				</tr>
+			
+			</table>
+			<br>
+				<br>
+				<br>
+				<br>
+			
+		</div>
+	</body>-->
+
+
+	<body >		
+		<div >
+			{% for messages in all_messages %}
+			<h2 class="title">{{ messages[28] }}  班级课程表</h2>
+			<table class="main_table"  border="1">
+				<tr>
+					<th></th>
+					<th width="200">星期一</th>
+					<th width="200">星期二</th>
+					<th width="200">星期三</th>
+					<th width="200">星期四</th>
+					<th width="200">星期五</th>
+					<th width="200">星期六</th>
+					<th width="200">星期日</th>
+
+				</tr>
+				<tr>
+					<td>第一节 <br> 08:30-09:15</td>
+					<td rowspan="2">{% for message in messages[0] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[4] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[8] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[12] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[16] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[20] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[24] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第二节 <br> 09:20-10:05</td> 
+				</tr>
+				<tr>
+					<td>第三节 <br> 10:25-11:10</td>
+					<td rowspan="2">
+						{% for message in messages[1] %}
+							{% for mess in message %}
+								{{ mess }} <br>
+							{% endfor %}
+						{% endfor %}
+					</td>
+					<td rowspan="2">{% for message in messages[5] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[9] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[13] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[17] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[21] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[25] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第四节 <br> 11:15-12:00</td>
+				</tr>
+				<tr>
+					<td>第五节 <br> 15:00-15:45</td>
+					<td rowspan="2">{% for message in messages[2] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[6] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[10] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[14] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[18] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[22] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="2">{% for message in messages[26] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第六节 <br> 15:50-16:35</td>
+				</tr>
+				<tr>
+					<td>第七节 <br> 18:00-18:45</td>
+					<td rowspan="3">{% for message in messages[3] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in messages[7] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in messages[11] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in messages[15] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in messages[19] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in messages[23] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+					<td rowspan="3">{% for message in messages[27] %}
+						{% for mess in message %}
+							{{ mess }} <br>
+						{% endfor %}
+					{% endfor %}</td>
+				</tr>
+				<tr>
+					<td>第八节 <br> 18:50-19:35</td>
+				</tr>
+				<tr>
+					<td>第九节 <br> 19:40-20:25</td>
+				</tr>
+			
+			</table>
+			<br>
+				<br>
+				<br>
+				<br>
+			{% endfor %}
+			
+		</div>
+	</body>
+</html>
+
+
+
+{% endblock %}

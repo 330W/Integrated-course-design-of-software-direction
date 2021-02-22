@@ -1,0 +1,19 @@
+{% extends 'head_teacher.html' %}
+{% from 'bootstrap/table.html' import render_table %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+<h2>排名系统</h2>
+{{ render_form(form, form_type="inline") }}
+<br>
+<h3>专业：计算机科学与技术 总人数:237
+</h3>
+<br>
+    {% for message in messages %}
+        <h4>{{ message[0].classes }}  {{ message[0].tea_name }} {{ message[0].counts}}</h4>
+        <br>
+        {{ render_table(message, titles=titles, primary_key='sno') }}
+        <br>
+        <br>
+    {% endfor %}
+{% endblock %}

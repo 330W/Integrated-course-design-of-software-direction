@@ -1,0 +1,14 @@
+{% extends 'head_teacher.html' %}
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block content %}
+<h3>课程安排</h3>
+<br>
+    {% for message in messages_course %}
+        <h4>课程代码:{{ message[0].gno }}  课程名称:{{ message[0].name }} 课程类别:{{ message[0].xingzhi}}  课时:{{ message[0].keshi}} 学分:{{ message[0].xuefen}}</h4>
+        <br>
+        {{ render_table(message, titles=title1, primary_key='cno') }}
+        <br>
+        <br>
+    {% endfor %}
+{% endblock %}

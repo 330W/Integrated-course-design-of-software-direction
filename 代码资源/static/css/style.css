@@ -1,0 +1,31 @@
+body{
+	 min-width: 1800px;
+}
+.title{
+	text-align: center;
+}
+.main_div{
+	margin-top: 40px;
+}
+.main_table{
+	margin: 0 auto; 
+	text-align: center;
+	width: 2000;
+}
+td{
+	padding: 0 10px;
+}
+#message{
+	width: 100px;
+	height: 125px;
+	padding: 10px;
+	border: 1px solid black;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+#message h4{
+	margin: 2px;
+}
+#message span{
+	color: red;
+}

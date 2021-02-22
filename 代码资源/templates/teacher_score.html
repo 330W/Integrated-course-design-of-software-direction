@@ -1,0 +1,19 @@
+{% extends 'teacher.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+{% from 'bootstrap/table.html' import render_table %}
+
+
+{% block content %}
+<h2>登分系统</h2>
+    {{ render_form(form, form_type="inline") }}
+    <br>
+<h2>排分系统</h2>
+    {{ render_form(form2, form_type="inline") }}
+    <br>
+    {% for message in messages %}
+        <h4>课程号:{{ message[0].cno }}-{{ message[0].cname }} </h4>
+        <br>
+        {{ render_table(message, titles=titles, primary_key='sno') }}
+        <br>
+    {% endfor %}
+{% endblock %}

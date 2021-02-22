@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/nav.html' import render_nav_item %}
+
+{% block head %}
+    {{ render_nav_item('head_teacher', tno, tno=tno) }}
+    {{ render_nav_item('head_teacher_account', '个人信息', tno=tno) }}
+    {{ render_nav_item('head_teacher_course', '浏览所教课程', tno=tno) }}
+    {{ render_nav_item('head_teacher_score', '成绩录入', tno=tno) }}
+    {{ render_nav_item('head_teacher_all_student', '查看所有学生', tno=tno) }}
+    {{ render_nav_item('head_teacher_all_teacher', '查看所有老师', tno=tno) }}
+    {{ render_nav_item('head_teacher_all_course', '查看所有课程', tno=tno) }}
+    {{ render_nav_item('head_teacher_course_table', '查看课程表安排', tno=tno) }}
+    {{ render_nav_item('index', '退出登录') }}
+{% endblock %}

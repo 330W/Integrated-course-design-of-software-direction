@@ -1,0 +1,10 @@
+{% extends 'student.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block content %}
+<h2>退课系统</h2>
+    {{ render_form(form, form_type="inline") }}
+    <br>
+    {{ render_table(messages, titles=titles) }}
+{% endblock %}

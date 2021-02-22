@@ -1,0 +1,16 @@
+{% extends 'student.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block content %}
+<h2>选课系统</h2>
+{{ render_form(form, form_type="inline") }}
+<br>
+    {% for message in messages %}
+        <h3>课程性质:{{ message[0].category }} </h3>
+        <br>
+        {{ render_table(message, titles=titles, primary_key='cno') }}
+        <br>
+        <br>
+    {% endfor %}
+{% endblock %}

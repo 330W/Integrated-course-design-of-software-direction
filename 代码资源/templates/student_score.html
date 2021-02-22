@@ -1,0 +1,8 @@
+{% extends 'student.html' %}
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block content %}
+<h2>成绩查询系统</h2>
+<h4 align="right">平均绩点:{{ all_jidian }}</h4>
+    {{ render_table(messages, titles=titles) }}
+{% endblock %}
