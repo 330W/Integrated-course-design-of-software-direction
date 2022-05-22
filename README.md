@@ -12,7 +12,7 @@ https://blog.csdn.net/weixin_43999137/article/details/113178364
 | 其余 | 提交最终报告   |
 
 
-# 执行代码
+# 运行步骤
 ## 安装Flask
 pip install Flask
 
@@ -22,5 +22,5 @@ pip install Bootstrap-Flask
 ## 安装SQLAlchemy
 pip install SQLAlchemy
 
-
+## 执行代码
 pycharm执行app.py即可
